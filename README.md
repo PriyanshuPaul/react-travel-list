@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Travel List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A travel list in react
 
 ## Available Scripts
 
