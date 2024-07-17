@@ -5,8 +5,8 @@ const PackingList = ({ items }: { items: Array<Item> }) => {
         <div className="list">
             <ul>
                 {
-                    items.map((item) => (
-                        <li>
+                    items.map((item, key) => (
+                        <li key={key}>
                             <span style={item.packed ? { textDecoration: "line-through" } : {}}>{item.quantity} {item.description}</span>
                             <button>❌</button>
                         </li>
