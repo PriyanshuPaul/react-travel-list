@@ -2,10 +2,12 @@ import { useState } from "react"
 import { Item } from "../models/item.model";
 
 
-const AddForm = () => {
+const AddForm = ({ onAddItems }) => {
 
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState(1);
+
+
     const addItem = (e: React.FormEvent<EventTarget>) => {
         e.preventDefault()
         if (!description) return;
@@ -15,8 +17,9 @@ const AddForm = () => {
             packed: false,
             id: Date.now()
         };
-        setDescription('')
-        setQuantity(1)
+        onAddItems(packingItem)
+        setDescription('');
+        setQuantity(1);
         console.log(packingItem)
     }
 

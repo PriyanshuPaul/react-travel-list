@@ -1,15 +1,13 @@
 import { Item } from "../models/item.model"
+import ItemSection from "./item"
 
-const PackingList = ({ items }: { items: Array<Item> }) => {
+const PackingList = ({ items, onDeleteItem }: { items: Array<Item>, onDeleteItem }) => {
     return (
         <div className="list">
             <ul>
                 {
-                    items.map((item, key) => (
-                        <li key={key}>
-                            <span style={item.packed ? { textDecoration: "line-through" } : {}}>{item.quantity} {item.description}</span>
-                            <button>❌</button>
-                        </li>
+                    items.map((item) => (
+                        <ItemSection item={item} key={item.id} onDeleteItem={onDeleteItem} />
                     ))
                 }
             </ul>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import AddForm from './components/add-form';
 import Footer from './components/footer';
 import Header from './components/header';
@@ -9,11 +10,25 @@ const initialItems: Array<Item> = [
   { id: 3, description: "Charger", quantity: 1, packed: false }
 ];
 const App = () => {
+  const [items, setItems] = useState(initialItems)
+  const handleAddItem = (item) => {
+    setItems((items: Item[]) => {
+      return [...items, item]
+    })
+  }
+  const handleDeleteItem = (key) => {
+    setItems((items: Item[]) =>
+      items.filter((item) =>
+        item.id !== key
+      )
+    )
+  }
   return (
+
     <div className='app'>
       <Header />
-      <AddForm />
-      <PackingList items={initialItems} />
+      <AddForm onAddItems={handleAddItem} />
+      <PackingList items={items} onDeleteItem={handleDeleteItem} />
       <Footer />
     </div>
   )
