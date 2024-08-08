@@ -30,13 +30,14 @@ const App = () => {
       )
     )
   }
+ 
   return (
 
     <div className='app'>
       <Header />
       <AddForm onAddItems={handleAddItem} />
       <PackingList items={items} onDeleteItem={handleDeleteItem} onCheckedItem={handleCheckedItem} />
-      <Footer />
+      <Footer items={items} />
     </div>
   )
 }
