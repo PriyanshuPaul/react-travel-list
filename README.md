@@ -6,6 +6,9 @@ A travel list in react.
 This is a travel list application to understand the very basics of React. 
 Followed the course for Mordern React on Udemy.
 
+## Screenshots
+[![Screenshot-2024-08-09-015250.png](https://i.postimg.cc/440H7D30/Screenshot-2024-08-09-015250.png)](https://postimg.cc/F1jHwn3b)
+
 ## Available Scripts
 In the project directory, you can run:
 ### `npm install`
