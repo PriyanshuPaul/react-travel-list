@@ -23,12 +23,19 @@ const App = () => {
       )
     )
   }
+  const handleCheckedItem = (key) => {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === key ? { ...item, packed: !item.packed } : item
+      )
+    )
+  }
   return (
 
     <div className='app'>
       <Header />
       <AddForm onAddItems={handleAddItem} />
-      <PackingList items={items} onDeleteItem={handleDeleteItem} />
+      <PackingList items={items} onDeleteItem={handleDeleteItem} onCheckedItem={handleCheckedItem} />
       <Footer />
     </div>
   )
